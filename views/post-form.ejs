@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+        <title><%= heading %></title>
+        <link rel="icon" type="image/x-icon" href="/images/tool.png" />
+    </head>
+
+    <body>
+        <main>
+            <!-- HEADER -->
+            <div class="container" id="header">
+                <img src="/images/laugh-icon.png" alt="Smile icon" />
+            </div>
+
+            <!-- FORM -->
+            <div class="container" id="content">
+                <div class="card" id="edit-form">
+                    <h1><%= heading %></h1>
+                    <form id="jokeForm" 
+                        method="<%= joke ? 'patch' : 'post' %>"  
+                        action="<%= joke ? `${API_URL}/jokes/${joke.id}` : `${API_URL}/jokes` %>"
+                    >
+                        <input type="hidden" name="id" value="<%= joke ? joke.id : '' %>">
+                        <select id="type-of-joke" name="type-of-joke">
+                            <option value="" disabled selected>Type of joke</option>
+                            <option value="Science" <%= joke && joke.jokeType === 'Science' ? 'selected' : '' %>>Science</option>
+                            <option value="Puns" <%= joke && joke.jokeType === 'Puns' ? 'selected' : '' %>>Puns</option>
+                            <option value="Wordplay" <%= joke && joke.jokeType === 'Wordplay' ? 'selected' : '' %>>Wordplay</option>
+                            <option value="Math" <%= joke && joke.jokeType === 'Math' ? 'selected' : '' %>>Math</option>
+                            <option value="Food" <%= joke && joke.jokeType === 'Food' ? 'selected' : '' %>>Food</option>
+                            <option value="Sports" <%= joke && joke.jokeType === 'Sports' ? 'selected' : '' %>>Sports</option>
+                            <option value="Movies" <%= joke && joke.jokeType === 'Movies' ? 'selected' : '' %>>Movies</option>
+                        </select>
+                        <textarea name="content" placeholder="Content" required rows="10"><%= joke ? joke.jokeText : '' %></textarea>
+                        <button class="form-btn" type="submit"><%= submit %></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer>
+                <div class="container" id="footer">
+                    <p>Copyright © Paula Cardone</p>
+                    <p>This site contains an array with 15 jokes with types: Science, Puns, Wordplay, Math, Food, Sports and Movies (they come from an exercise of The Complete 2024 Web Development Bootcamp)</p>
+                </div>
+            </footer>
+        </main>
+        <script src="/js/form-controller.js"></script>
+    </body>
+</html>

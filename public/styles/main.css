@@ -1,0 +1,182 @@
+:root {
+  /* Color Hunt palette */
+  --dark-blue: #00215e;
+  --light-blue: #2c4e80;
+  --orange: #fc4100;
+  --creamy: #ffc55a;
+
+  /* Other variables */
+  --margin: 15px;
+  --padding: 25px;
+  --boxes-radius: 20px;
+  --button-radius: 10px;
+  --max-width: 450px;
+}
+
+body {
+  background-image: url("../images/background-pattern.png");
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#header,
+#content,
+#footer,
+#edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#random-joke,
+#filtered-jokes,
+#edit-form {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: var(--margin);
+  padding: var(--padding);
+  background-color: var(--creamy);
+  border-radius: var(--boxes-radius);
+}
+
+#random-joke h1 {
+  color: var(--orange);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#random-joke p,
+#filtered-jokes-container p {
+  color: var(--dark-blue);
+  font-size: large;
+  text-align: center;
+}
+
+#filtered-jokes form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#type-of-joke {
+  flex: 1;
+  margin-right: 10px;
+  border-radius: var(--button-radius);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  height: 36px;
+  line-height: 36px;
+  color: var(--light-blue);
+  border-color: var(--light-blue);
+  border-width: 2px;
+  background-color: beige;
+}
+
+input[type="submit"] {
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  border: none;
+  width: 120px;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  height: 36px;
+  line-height: 36px;
+}
+
+.card {
+  outline-color: var(--light-blue);
+  outline-style: dotted;
+  outline-width: thin;
+  outline-offset: 5px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  width: 100px;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  margin: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  height: 30px;
+  line-height: 30px;
+}
+
+.edit-btn {
+  background-color: var(--light-blue);
+  color: var(--orange);
+}
+
+.delete-btn {
+  background-color: var(--orange);
+  color: var(--dark-blue);
+}
+
+.form-btn {
+  background-color: var(--orange);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  height: 36px;
+  line-height: 36px;
+  width: 300px;
+}
+
+#button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#new-joke {
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--button-radius);
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 15px;
+}
+
+#footer {
+  text-align: center;
+  color: var(--orange);
+  font-size: large;
+  background-color: var(--light-blue);
+}
+
+#edit-form h1 {
+  color: var(--orange);
+  margin: 0;
+}
+
+#edit-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#jokeForm,
+#edit-form select,
+#edit-form textarea,
+#edit-form .form-btn {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 10px;
+}

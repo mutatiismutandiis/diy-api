@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    <title>Jokes API</title>
+    <link rel="icon" type="image/x-icon" href="/images/smile.png" />
+  </head>
+
+  <body>
+    <main>
+      <!-- HEADER -->
+      <div class="container" id="header">
+        <img src="/images/laugh-icon.png" alt="Smile icon" />
+      </div>
+
+      <!-- CONTENT -->
+      <div class="container" id="content">
+        <!-- Random joke -->
+        <div class="card" id="random-joke">
+          <h1>A random joke</h1>
+          <p><%= randomJoke.jokeText %></p>
+        </div>
+
+        <div class="container" id="filtered-jokes">
+          <!-- Dropdown to filter jokes -->
+          <form action="/" id="dropdown" method="POST">
+            <select id="type-of-joke" name="type">
+              <option value="" disabled selected>Type of joke</option>
+              <option value="Science">Science</option>
+              <option value="Puns">Puns</option>
+              <option value="Wordplay">Wordplay</option>
+              <option value="Math">Math</option>
+              <option value="Food">Food</option>
+              <option value="Sports">Sports</option>
+              <option value="Movies">Movies</option>
+            </select>
+            <input type="submit" value="Filter"/>
+          </form>
+            
+          <!-- Display list of jokes -->
+          <div id="filtered-jokes-container"></div>
+
+          <!-- Redirection to new joke form -->
+          <div class="container" id="button-row">
+            <button id="new-joke">Create your own joke</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="container" id="footer">
+          <p>Copyright © Paula Cardone</p>
+          <p>This site contains an array with 15 jokes with types: Science, Puns, Wordplay, Math, Food, Sports and Movies (they come from an exercise of The Complete 2024 Web Development Bootcamp)</p>
+        </div>
+      </footer>
+    </main>
+    <script src="/js/index-controller.js"></script>
+  </body>
+</html>
